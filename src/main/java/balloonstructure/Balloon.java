@@ -42,23 +42,21 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."""
 */
 
-import ij.*;
-import ij.gui.*;
-import ij.plugin.*;
-import ij.process.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.lang.Math.*;
-import java.awt.image.*;
-import java.util.*;
-import Jama.*;
-import java.util.Properties;
-import java.io.InputStream;
+import Jama.Matrix;
+import ij.IJ;
+import ij.ImagePlus;
+import ij.gui.PolygonRoi;
+import ij.gui.Roi;
+import ij.process.ImageProcessor;
+
+import java.awt.Color;
+import java.awt.Point;
+import java.awt.Polygon;
 import java.io.IOException;
-import java.io.FileInputStream;
-import java.io.OutputStream;
-import java.io.FileOutputStream;
-import java.lang.System;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Properties;
 
 public class Balloon extends Thread  	/* BEGIN Balloon class definition */
 {

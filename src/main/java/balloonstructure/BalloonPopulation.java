@@ -36,26 +36,23 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."""
 */
 
-import ij.*;
-import ij.gui.*;
-import ij.process.*;
-import java.awt.*;
-import java.util.*;
-import Jama.*;
-import ij.plugin.filter.GaussianBlur;
-import ij.plugin.ContrastEnhancer;
+import Jama.Matrix;
+import ij.IJ;
+import ij.ImagePlus;
+import ij.gui.PolygonRoi;
+import ij.gui.Roi;
+import ij.process.ColorProcessor;
+import ij.process.ImageProcessor;
 
+import java.awt.Point;
+import java.awt.Polygon;
 // reading/writing properties files
-import java.io.*;
-import java.util.*;
-import java.util.Properties;
-import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.FileInputStream;
-import java.lang.System;
-import java.lang.Thread;
-
-import ij.plugin.filter.Convolver;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Properties;
 
 
 public class BalloonPopulation

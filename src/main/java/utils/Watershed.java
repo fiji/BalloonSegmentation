@@ -16,11 +16,12 @@ package utils;
  * http://www.scri.ac.uk/staff/lioneldupuy
  ********************************************************************/
 
-import ij.*;
-import ij.process.*;
-import java.util.*;
-import Jama.*;
-import ij.plugin.filter.*;
+import Jama.Matrix;
+import ij.IJ;
+import ij.process.ImageProcessor;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Watershed
 {

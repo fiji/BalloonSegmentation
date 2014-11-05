@@ -34,10 +34,15 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 */
 package balloonstructure;
 
-import ij.*;
-import ij.process.*;
-import java.io.*;
-import java.util.*;
+import ij.IJ;
+import ij.ImagePlus;
+import ij.ImageStack;
+import ij.process.ImageProcessor;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class BalloonSequence

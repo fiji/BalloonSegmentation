@@ -31,50 +31,80 @@
  ********************************************************************/
 
 // General Packages
-import ij.*;
-import ij.gui.*;
+import balloonstructure.Balloon;
+import balloonstructure.BalloonPopulation;
+import balloonstructure.BalloonSequence;
+import ij.IJ;
+import ij.ImagePlus;
+import ij.ImageStack;
+import ij.WindowManager;
+import ij.gui.GUI;
+import ij.gui.ImageCanvas;
 import ij.gui.Overlay;
-import ij.io.*;
-import ij.process.*;
-import ij.gui.ProgressBar;
-import ij.plugin.filter.Convolver;
-import ij.plugin.ContrastEnhancer;
+import ij.gui.PolygonRoi;
+import ij.gui.Roi;
+import ij.gui.ShapeRoi;
+import ij.gui.StackWindow;
+import ij.gui.TextRoi;
+import ij.gui.Toolbar;
+import ij.io.OpenDialog;
+import ij.measure.ResultsTable;
 import ij.plugin.PlugIn;
 import ij.plugin.frame.RoiManager;
-import ij.measure.ResultsTable;
+import ij.process.ImageProcessor;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.font.*;
-import java.awt.geom.*;
-import java.awt.geom.GeneralPath;
-import java.awt.Graphics2D;
-import java.awt.Graphics2D.*;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
-import java.awt.RenderingHints;
-import java.awt.geom.AffineTransform;
-
-import java.io.InputStream;
-import java.io.IOException;
-import java.io.FileInputStream;
-import java.io.OutputStream;
-import java.io.FileOutputStream;
-
-
-import java.io.*;
-import java.io.File.*;
-import java.util.*;
-import javax.swing.*;
-import javax.swing.AbstractButton.*;
-import javax.swing.JComponent.*;
-import javax.swing.text.JTextComponent.*;
+import java.awt.Checkbox;
 import java.awt.Color;
-import javax.swing.border.*;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.Label;
+import java.awt.Point;
+import java.awt.Polygon;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.awt.geom.GeneralPath;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Properties;
 
-import balloonstructure.*;
-import utils.*;
-import java.lang.System;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
+
+import utils.Watershed;
 
 /** TODO  */
 // Abort if no image

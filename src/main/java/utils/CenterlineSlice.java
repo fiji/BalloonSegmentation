@@ -1,14 +1,11 @@
 package utils;
-import ij.*;
-import ij.io.*;
-import ij.gui.*;
-import ij.plugin.*;
-import ij.process.*;
-import java.lang.Math.*;
-import java.awt.*;
+import ij.IJ;
+import ij.ImagePlus;
+import ij.ImageStack;
+import ij.process.ColorProcessor;
+import ij.process.ImageProcessor;
 
-import java.io.*;
-import java.util.*;
+import java.util.Vector;
 
 
 /*********************************************************************

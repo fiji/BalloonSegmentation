@@ -23,12 +23,21 @@ package utils;
 ************************************************************************************/
 
 
-import ij.*;
-import ij.process.*;
-import java.awt.*;
-import java.util.*;
-import balloonstructure.*;
-import Jama.*;
+import Jama.EigenvalueDecomposition;
+import Jama.Matrix;
+import Jama.SingularValueDecomposition;
+import balloonstructure.Balloon;
+import balloonstructure.BalloonPopulation;
+import balloonstructure.BalloonSequence;
+import ij.IJ;
+import ij.ImagePlus;
+import ij.ImageStack;
+import ij.process.ColorProcessor;
+import ij.process.ImageProcessor;
+
+import java.awt.Color;
+import java.awt.Polygon;
+import java.util.Vector;
 
 public class Kinematics {
     BalloonSequence pop_sequence;									//
