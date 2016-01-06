@@ -54,5 +54,4 @@
 			<artifactId>jama</artifactId>
 		</dependency>
 	</dependencies>
-
 </project>
