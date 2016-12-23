@@ -27,6 +27,9 @@
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
 
+*.mf
+*.iml
+
 ## File-based project format:
 *.iws
 
@@ -65,3 +68,4 @@ fabric.properties
 # Maven #
 /target/
 
+*.iml
