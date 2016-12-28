@@ -15,10 +15,10 @@
 	<artifactId>BalloonSegmentation_</artifactId>
 	<version>2.0.1-SNAPSHOT</version>
 
-	<name>plugins/BalloonSegmentation_.jar</name>
-	<description></description>
+	<name>Balloon Segmentation</name>
+	<description>Balloon Segmentation plugin for Fiji.</description>
 	<url>http://imagej.net/Balloon</url>
-	<inceptionYear>2012</inceptionYear>
+	<inceptionYear>2007</inceptionYear>
 
 	<developers>
 		<developer>
