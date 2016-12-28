@@ -26,6 +26,7 @@
 			<name>Curtis Rueden</name>
 			<url>http://imagej.net/User:Rueden</url>
 			<roles>
+				<role>reviewer</role>
 				<role>maintainer</role>
 			</roles>
 		</developer>
