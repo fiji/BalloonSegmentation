@@ -106,8 +106,11 @@ import javax.swing.border.Border;
 
 import utils.Watershed;
 
+import static ij.measure.Measurements.CENTROID;
+
 /** TODO  */
-// Abort if no image
+
+// Abort if no image
 // export/import cells
 // Updates graphics not working appart mouse-wheel induced
 /**  TODO  */
@@ -592,7 +595,8 @@ implements ActionListener, AdjustmentListener, ItemListener,
 			    String ROIName_new = ROIName_old;//ROIName_new_sub + ROIName_new_sup;
 			    // Change names in the ROI manager
 			    IJ.runMacro("roiManager(\"Select\"," + nROI + ") ",null);
-			    IJ.runMacro("roiManager(\"Rename\", \"" + ROIName_new + "\") ",null);*/
+			    IJ.runMacro("roiManager(\"Rename\", \"" + ROIName_new + "\") ",null);
+*/
 			}
 		}
 
@@ -814,6 +818,7 @@ implements ActionListener, AdjustmentListener, ItemListener,
 	private JButton 		bnOptimize;
 	private JButton 		bnClose;
 	private JButton 		bnSample;
+	private JButton         bnFromROI;
 	private JToggleButton		bnEdit;
 	private JButton 		bnClear;
 	private JButton 		bnShow;
@@ -848,7 +853,7 @@ implements ActionListener, AdjustmentListener, ItemListener,
 		constraint = new GridBagConstraints();
 
 		boundsLayout = new GridLayout(1,2,10,10);
-		centerLayout = new GridLayout(3,2,10,10);
+		centerLayout = new GridLayout(4,2,10,10);
 		inflateLayout = new GridLayout(1,2,10,10);
 		resultsLayout = new GridLayout(3,2,10,10);
 		buttonsLayout = new GridLayout(1,2,10,10);
@@ -866,6 +871,8 @@ implements ActionListener, AdjustmentListener, ItemListener,
 		bnBound.setBackground(new Color(255,200,200));
 		bnSample = new JButton("Sample (H*L)");
 		bnSample.setBackground(Color.LIGHT_GRAY);
+		bnFromROI = new JButton("From ROI manager");
+		bnFromROI.setBackground(Color.LIGHT_GRAY);
 		bnEdit = new JToggleButton(" Manual ");
 		bnEdit.setBackground(Color.LIGHT_GRAY);
 		bnOpen = new JButton("    Import    ");
@@ -944,6 +951,7 @@ implements ActionListener, AdjustmentListener, ItemListener,
 		pnCenter.add(bnEdit);
 		pnCenter.add(txtHL);
 		pnCenter.add(bnSample);
+		pnCenter.add(bnFromROI);
 		pnCenter.add(new Label(""));
 		pnCenter.add(bnOpen);
 		pnCenter.setLayout(centerLayout);
@@ -978,6 +986,7 @@ implements ActionListener, AdjustmentListener, ItemListener,
 		// buttons listeners
 		bnBound.addActionListener(this);
 		bnSample.addActionListener(this);
+		bnFromROI.addActionListener(this);
 		bnClear.addActionListener(this);
 		bnEdit.addActionListener(this);
 		bnClose.addActionListener(this);
@@ -1186,6 +1195,54 @@ implements ActionListener, AdjustmentListener, ItemListener,
 			{
 				IJ.error("You must find the boundaries");
 			}
+		}
+
+		if (e.getSource() == bnFromROI) {
+			if (currentStage[currentSlice - 1] >= 1) {
+				Roi[] rois = getRois();
+				double[] Xpositions = new double[rois.length];
+				double[] Ypositions = new double[rois.length];
+				boolean isCurrentStageCorrect = true;
+
+				for (int i = 0; i < rois.length; i++) {
+					i1.setRoi(rois[i]);
+					ij.process.ImageStatistics stats = i1.getStatistics(CENTROID);
+					Xpositions[i] = stats.xCentroid;
+					Ypositions[i] = stats.yCentroid;
+					// Extract next seed coordinate
+
+					// Find relevant slice number
+					int slice = currentSlice - 1;
+					// Find the right population and add one balloon to it
+					if (currentStage[slice] >= 1) {
+						pop = popSequence.PopList[slice];
+						pop.AddNewBalloon((int) Xpositions[i], (int) Ypositions[i]);
+						currentStage[slice] = 2;
+					} else {
+						isCurrentStageCorrect = false;
+					}
+				}
+
+				currentSlice = i1.getCurrentSlice();
+				ipWallSegment = (i1.getStack()).getProcessor(currentSlice);
+				pop = popSequence.PopList[currentSlice - 1];
+
+				ClearDraw();
+
+				InitiateDraw();
+				drawBounds();
+				drawCellID();
+				drawCrosses();
+				showOverlay();
+				currentStage[currentSlice - 1] = 2;
+
+				// CHECK THAT EDIT NOT SELECTED
+				bnEdit.setSelected(true);
+
+
+			}
+
+
 		}
 
 		if (e.getSource() == bnOpen) {
@@ -1583,6 +1640,14 @@ implements ActionListener, AdjustmentListener, ItemListener,
 	public void windowDeiconified(WindowEvent e){}
 	public void windowIconified(WindowEvent e){}
 	public void windowOpened(WindowEvent e){}
+	public Roi[] getRois() {
+		RoiManager rmanager = RoiManager.getInstance();
+		if (rmanager == null || rmanager.getCount() == 0) {
+			IJ.log("add ROIs to the RoiManager first (select a region then press [t]).");
+			return null;
+		}
+		return rmanager.getRoisAsArray();
+	}
 
 
 	// *************************
