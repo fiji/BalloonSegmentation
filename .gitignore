@@ -1,7 +1,20 @@
+# Maven #
+/target/
+
 # Eclipse #
 /.classpath
 /.project
 /.settings/
 
-# Maven #
-/target/
+# IntelliJ #
+/*.iml
+/*.iws
+/*.mf
+/.idea/
+/.idea_modules/
+/atlassian-ide-plugin.xml
+/com_crashlytics_export_strings.xml
+/crashlytics-build.properties
+/crashlytics.properties
+/fabric.properties
+/out/
