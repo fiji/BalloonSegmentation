@@ -20,46 +20,9 @@
  * #L%
  */
 
-//package BalloonSegmentation;
+package sc.fiji.balloonSegmentation;
 
-/*********************************************************************
- * Version: 2012
- ********************************************************************/
-
-/*********************************************************************
- * Lionel Dupuy
- * JHI, Dundee
- * Invergowrie
- * DUNDEE DD2 5DA
- * Scotland
- * UK
- *
- * Lionel.Dupuy@hutton.ac.uk
- * http://www.hutton.ac.uk/research/groups/ecological-sciences/plant-soil-ecology/plant-systems-modelling
- ********************************************************************/
-
-// General Packages
-import balloonstructure.Balloon;
-import balloonstructure.BalloonPopulation;
-import balloonstructure.BalloonSequence;
-import ij.IJ;
-import ij.ImagePlus;
-import ij.ImageStack;
-import ij.WindowManager;
-import ij.gui.GUI;
-import ij.gui.ImageCanvas;
-import ij.gui.Overlay;
-import ij.gui.PolygonRoi;
-import ij.gui.Roi;
-import ij.gui.ShapeRoi;
-import ij.gui.StackWindow;
-import ij.gui.TextRoi;
-import ij.gui.Toolbar;
-import ij.io.OpenDialog;
-import ij.measure.ResultsTable;
-import ij.plugin.PlugIn;
-import ij.plugin.frame.RoiManager;
-import ij.process.ImageProcessor;
+import static ij.measure.Measurements.CENTROID;
 
 import java.awt.Checkbox;
 import java.awt.Color;
@@ -112,9 +75,44 @@ import javax.swing.JToggleButton;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
 
-import utils.Watershed;
+import ij.IJ;
+import ij.ImagePlus;
+import ij.ImageStack;
+import ij.WindowManager;
+import ij.gui.GUI;
+import ij.gui.ImageCanvas;
+import ij.gui.Overlay;
+import ij.gui.PolygonRoi;
+import ij.gui.Roi;
+import ij.gui.ShapeRoi;
+import ij.gui.StackWindow;
+import ij.gui.TextRoi;
+import ij.gui.Toolbar;
+import ij.io.OpenDialog;
+import ij.measure.ResultsTable;
+import ij.plugin.PlugIn;
+import ij.plugin.frame.RoiManager;
+import ij.process.ImageProcessor;
+import sc.fiji.balloonSegmentation.structure.Balloon;
+import sc.fiji.balloonSegmentation.structure.BalloonPopulation;
+import sc.fiji.balloonSegmentation.structure.BalloonSequence;
+import sc.fiji.balloonSegmentation.utils.Watershed;
 
-import static ij.measure.Measurements.CENTROID;
+/*********************************************************************
+ * Version: 2012
+ ********************************************************************/
+
+/*********************************************************************
+ * Lionel Dupuy
+ * JHI, Dundee
+ * Invergowrie
+ * DUNDEE DD2 5DA
+ * Scotland
+ * UK
+ *
+ * Lionel.Dupuy@hutton.ac.uk
+ * http://www.hutton.ac.uk/research/groups/ecological-sciences/plant-soil-ecology/plant-systems-modelling
+ ********************************************************************/
 
 /** TODO  */
 

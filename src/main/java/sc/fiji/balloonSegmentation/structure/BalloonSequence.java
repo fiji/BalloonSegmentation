@@ -39,7 +39,7 @@
  * http://www.scri.ac.uk/staff/lioneldupuy
  ********************************************************************/
 
-package balloonstructure;
+package sc.fiji.balloonSegmentation.structure;
 
 import ij.IJ;
 import ij.ImagePlus;

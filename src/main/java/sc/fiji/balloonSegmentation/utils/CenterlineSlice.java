@@ -19,7 +19,7 @@
  * <http://www.gnu.org/licenses/gpl-2.0.html>.
  * #L%
  */
-package utils;
+package sc.fiji.balloonSegmentation.utils;
 import ij.IJ;
 import ij.ImagePlus;
 import ij.ImageStack;

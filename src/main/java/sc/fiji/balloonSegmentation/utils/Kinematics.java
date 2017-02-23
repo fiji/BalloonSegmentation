@@ -19,7 +19,7 @@
  * <http://www.gnu.org/licenses/gpl-2.0.html>.
  * #L%
  */
-package utils;
+package sc.fiji.balloonSegmentation.utils;
 /*********************************************************************
  * Version: January, 2008
  ********************************************************************/
@@ -47,14 +47,14 @@ package utils;
 import Jama.EigenvalueDecomposition;
 import Jama.Matrix;
 import Jama.SingularValueDecomposition;
-import balloonstructure.Balloon;
-import balloonstructure.BalloonPopulation;
-import balloonstructure.BalloonSequence;
 import ij.IJ;
 import ij.ImagePlus;
 import ij.ImageStack;
 import ij.process.ColorProcessor;
 import ij.process.ImageProcessor;
+import sc.fiji.balloonSegmentation.structure.Balloon;
+import sc.fiji.balloonSegmentation.structure.BalloonPopulation;
+import sc.fiji.balloonSegmentation.structure.BalloonSequence;
 
 import java.awt.Color;
 import java.awt.Polygon;

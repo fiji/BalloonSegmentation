@@ -19,7 +19,7 @@
  * <http://www.gnu.org/licenses/gpl-2.0.html>.
  * #L%
  */
-package balloonstructure;
+package sc.fiji.balloonSegmentation.structure;
 
 /*********************************************************************
  * Version: January, 2008
