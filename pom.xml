@@ -81,8 +81,8 @@
 		<url>https://github.com/fiji/BalloonSegmentation/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://jenkins.imagej.net/job/BalloonSegmentation/</url>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/fiji/BalloonSegmentation</url>
 	</ciManagement>
 
 	<properties>
