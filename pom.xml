@@ -11,7 +11,7 @@
 
 	<groupId>sc.fiji</groupId>
 	<artifactId>BalloonSegmentation_</artifactId>
-	<version>3.0.1-SNAPSHOT</version>
+	<version>3.0.1</version>
 
 	<name>Balloon Segmentation</name>
 	<description>Balloon Segmentation plugin for Fiji.</description>
@@ -73,7 +73,7 @@
 	<scm>
 		<connection>scm:git:git://github.com/fiji/BalloonSegmentation</connection>
 		<developerConnection>scm:git:git@github.com:fiji/BalloonSegmentation</developerConnection>
-		<tag>HEAD</tag>
+		<tag>BalloonSegmentation_-3.0.1</tag>
 		<url>https://github.com/fiji/BalloonSegmentation</url>
 	</scm>
 	<issueManagement>
