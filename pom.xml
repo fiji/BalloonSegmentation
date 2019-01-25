@@ -15,7 +15,7 @@
 
 	<name>Balloon Segmentation</name>
 	<description>Balloon Segmentation plugin for Fiji.</description>
-	<url>http://imagej.net/Balloon</url>
+	<url>https://imagej.net/Balloon</url>
 	<inceptionYear>2012</inceptionYear>
 	<organization>
 		<name>Fiji</name>
@@ -33,7 +33,7 @@
 		<developer>
 			<id>ctrueden</id>
 			<name>Curtis Rueden</name>
-			<url>http://imagej.net/User:Rueden</url>
+			<url>https://imagej.net/User:Rueden</url>
 			<roles>
 				<role>reviewer</role>
 				<role>maintainer</role>
@@ -43,18 +43,18 @@
 	<contributors>
 		<contributor>
 			<name>Lionel Dupuy</name>
-			<url>http://imagej.net/User:Dupuy</url>
+			<url>https://imagej.net/User:Dupuy</url>
 			<roles><role>founder</role></roles>
 		</contributor>
 		<contributor>
 			<name>Johannes Schindelin</name>
-			<url>http://imagej.net/User:Schindelin</url>
+			<url>https://imagej.net/User:Schindelin</url>
 			<roles><role>founder</role></roles>
 			<properties><id>dscho</id></properties>
 		</contributor>
 		<contributor>
 			<name>Mark Hiner</name>
-			<url>http://imagej.net/User:Hinerm</url>
+			<url>https://imagej.net/User:Hinerm</url>
 			<properties><id>hinerm</id></properties>
 		</contributor>
 		<contributor>
@@ -96,7 +96,7 @@
 	<repositories>
 		<repository>
 			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
+			<url>https://maven.imagej.net/content/groups/public</url>
 		</repository>
 	</repositories>
 
