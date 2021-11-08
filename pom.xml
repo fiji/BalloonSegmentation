@@ -71,7 +71,7 @@
 	</mailingLists>
 
 	<scm>
-		<connection>scm:git:git://github.com/fiji/BalloonSegmentation</connection>
+		<connection>scm:git:https://github.com/fiji/BalloonSegmentation</connection>
 		<developerConnection>scm:git:git@github.com:fiji/BalloonSegmentation</developerConnection>
 		<tag>HEAD</tag>
 		<url>https://github.com/fiji/BalloonSegmentation</url>
